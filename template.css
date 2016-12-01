@@ -1,0 +1,115 @@
+/*
+<jumbotron>
++<pre>
+*/
+.jumbotron{
+    padding-top:30px;
+    padding-bottom:30px;
+    margin-bottom:30px;
+    color:inherit;
+    background-color:#eee;
+}
+.jumbotron .h1,.jumbotron h1{
+    color:inherit
+}
+jumbotron p{
+    margin-bottom:15px;
+    font-size:21px;
+    font-weight:200;
+}
+.jumbotron>hr{
+    border-top-color:#d5d5d5;
+}
+.container .jumbotron,.container-fluid .jumbotron{
+    padding-right:15px;
+    padding-left:15px;
+    border-radius:6px;
+}
+.jumbotron .container{
+    max-width:100%;
+}
+@media screen and (min-width:768px){
+    .jumbotron{
+        padding-top:48px;
+        padding-bottom:48px;
+        }
+    .container .jumbotron,.container-fluid .jumbotron{
+        padding-right:60px;
+        padding-left:60px;
+        }
+    .jumbotron .h1,.jumbotron h1{
+        font-size:63px;
+        }
+}
+/*<end jumbotron>*/
+/*
+<pre>
++<img>
+*/
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  white-space: pre-wrap;
+  background-color: transparent;
+  border-radius: 0;
+}
+.pre-scrollable {
+  max-height: 340px;
+  overflow-y: scroll;
+}
+/*<end pre>*/
+/*
+<img>
+*/
+img {
+  border: 0;
+}
+img {
+    page-break-inside: avoid;
+}
+img {
+    max-width: 100% !important;
+}
+img {
+  vertical-align: middle;
+}
+.img-responsive
+{
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.img-rounded {
+  border-radius: 6px;
+}
+.img-thumbnail {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+  padding: 4px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: all .2s ease-in-out;
+       -o-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out;
+}
+.img-circle {
+  border-radius: 50%;
+}
+/*<end img>*/

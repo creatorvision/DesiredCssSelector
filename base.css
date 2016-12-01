@@ -1,0 +1,105 @@
+@import "https://fonts.googleapis.com/css?family=Bungee+Inline";
+* {
+  background-color: lightgrey;
+  color: darkblue;
+  padding: 2.5px;
+}
+body {
+  background-color: lightgrey;
+  font-family: arial, helvetica, sans-serif;
+  color: #0000be;
+  border-width: 1px;
+  border-color: darkgray;
+  padding: 5px;
+  margin: 5px;
+  display: block;
+}
+a {
+  color: #0000be;
+}
+a:hover {
+  color: #070784;
+  text-shadow: 1.25px 1.25px #ffffff;
+  text-underline-position: under;
+}
+a:active {
+  color: #00008b;
+  font-size: 16.5px;
+  font-weight: 600;
+  text-decoration: none;
+}
+a:visited {
+  color: lightgrey;
+  font-size: 16.5px;
+  font-weight: 600;
+  text-decoration: none;
+}
+h1 {
+  background-color: #eeebeb;
+  font-family: 'Bungee Inline', cursive;
+  color: #000058;
+  font-weight: 1000;
+}
+h2 {
+  background-color: #eeebeb;
+  font-family: 'Bungee Inline', cursive;
+  color: #000065;
+  font-weight: 800;
+}
+h3 {
+  background-color: #eeebeb;
+  font-family: 'Bungee Inline', cursive;
+  color: #000072;
+  font-weight: 700;
+}
+h4 {
+  background-color: #eeebeb;
+  font-family: 'Bungee Inline', cursive;
+  color: #00007e;
+  font-weight: 600;
+}
+p {
+  padding: 7.5px;
+  background-color: #ffffff;
+  font-weight: 500;
+  font-family: Copperplate / Copperplate Gothic Light, sans-serif;
+}
+div {
+  padding: 7.5px;
+  display: block;
+}
+button {
+  color: white;
+  padding: 1px;
+  margin: 2px;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 2px;
+  background-color: darkblue;
+}
+button:hover {
+  border: 1.5px solid darkblue;
+  box-shadow: 0 5px #eeebeb;
+  background-color: #0000be;
+}
+button:active {
+  color: #00008b;
+  background-color: #0000be;
+  box-shadow: 0 3px #c0b3b3;
+}
+/* ----------- Large Devices: Non-Retina Screens ----------- */
+@media screen and (min-device-width: 1024px) and (max-device-width: 1600px) {
+  font-size: 15px;
+}
+/* ----------- Medium Devices: Portrait and Landscape -----------*/
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  font-size: 10.5px;
+}
+/* Portrait */
+/* Landscape */
+/* ----------- Small Devices: Portrait and Landscape -----------*/
+@media only screen and (min-device-width: 320px) and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+  font-size: 7.5px;
+}
+/* Portrait */
+/* Landscape */

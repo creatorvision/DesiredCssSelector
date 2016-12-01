@@ -1,0 +1,214 @@
+/// Imports
+@import "https://fonts.googleapis.com/css?family=Bungee+Inline";
+
+/// Basic color details
+@base-background-color:lightgrey ;
+@base-background-color-light : saturate(lighten(@base-background-color,10%),10%);
+@base-color: darkblue;
+@base-color-light :saturate(lighten(@base-color,10%),10%);
+
+/// Basic text size details
+@base-font-size-lDevice: 15px;
+@base-font-size-mDevice : 0.7 * @base-font-size-lDevice;
+@base-font-size-sDevice : 0.5 * @base-font-size-lDevice;
+
+/// Basic border and spacing details
+@base-border-size : 1px;
+@border-color: darkgray;
+@base-padding:5px;
+@base-margin:5px;
+
+/// Highlight colors
+@highlight-success: #2ecc71;
+@highlight-error: #e74c3c;
+
+//others
+@base-font-family:arial, helvetica, sans-serif;
+@base-font-weight: 400 ;// normal
+
+.mixin-heading-common(){
+    background-color: @base-background-color-light;
+    font-family: 'Bungee Inline', cursive;
+}
+.mixin-hover(@objType){
+    &:hover{ 
+        & when (@objType = ancr){
+            color:desaturate(darken(@base-color-light,10%),10%);
+            text-shadow: 1.25*@base-border-size 1.25*@base-border-size 1.25*@base-background-color;
+            text-underline-position: under;
+       }
+        & when (@objType = btn){
+            border: 1.5*@base-border-size solid @base-color;
+            box-shadow: 0 5*@base-border-size @base-background-color-light;
+            background-color: @base-color-light;
+        }
+    }
+}
+.mixin-active(@objType){
+    &:active{
+        & when (@objType = ancr){
+            color:saturate(darken(@base-color-light,10%),10%);
+            font-size:1.1*@base-font-size-lDevice;
+            font-weight:1.5*@base-font-weight;
+            text-decoration:none;
+        }
+        & when (@objType = btn){
+            color:saturate(darken(@base-color-light,10%),10%); 
+            background-color: @base-color-light;        
+            box-shadow: 0 3*@base-border-size saturate(darken(@base-background-color,10%),10%);
+        }
+    }
+}
+.mixin-visited(@objType){
+    &:visited{
+        & when (@objType = ancr){
+            color:@base-background-color;
+            font-size:1.1*@base-font-size-lDevice;
+            font-weight:1.5*@base-font-weight;
+            text-decoration:none;
+        }
+        & when (@objType = oth){
+            color:saturate(darken(@base-color-light,10%),10%);            
+        }
+    }
+}
+
+///----------- Base CSS -----------
+
+
+/* ALL */
+* {
+    background-color: @base-background-color;
+    color: @base-color;
+    padding:0.5 * @base-padding;
+}
+
+/* Body */
+body {
+
+    background-color: @base-background-color;
+    font-family: @base-font-family;
+    color:@base-color-light;
+    border-width: @base-border-size;
+    border-color: @border-color;
+    padding: @base-padding;
+    margin: @base-margin;
+    display: block;
+}
+
+/* Ancor */
+a{
+    color:@base-color-light;
+    .mixin-hover(ancr);
+    .mixin-active(ancr);
+    .mixin-visited(ancr);
+}
+
+/* Heading */
+h1{
+    .mixin-heading-common();
+    color:saturate(darken(@base-color,10%),10%);
+    font-weight: 2.5* @base-font-weight;
+}
+h2{
+    .mixin-heading-common();
+    color:saturate(darken(@base-color,7.5%),7.5%);
+    font-weight: 2.0* @base-font-weight;
+}
+h3{
+    .mixin-heading-common();
+    color:saturate(darken(@base-color,5%),5%);
+    font-weight: 1.75* @base-font-weight;
+}
+h4{
+    .mixin-heading-common();
+    color:saturate(darken(@base-color,2.5%),2.5%);
+    font-weight: 1.5* @base-font-weight;
+}
+/* Paragraph */
+p{
+    padding:1.5*@base-padding;
+    background-color:saturate(lighten(@base-background-color-light,10%),10%);
+    font-weight:1.25*@base-font-weight;
+    font-family: Copperplate / Copperplate Gothic Light, sans-serif;
+}
+/* Div */
+div{
+    padding: 1.5*@base-padding;
+    display: block;
+}
+/* Button */
+button{
+    .mixin-hover(btn);
+    .mixin-active(btn);
+    color:white;
+    padding : 0.2* @base-padding;
+    margin : 0.4* @base-margin;
+    border-style: solid;
+    border-radius: 5*@base-border-size;
+    border-width: 2*@base-border-size;
+    background-color: @base-color;
+}
+
+
+/// Media Queries
+
+/* ----------- Large Devices: Non-Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1600px)  { 
+      font-size: @base-font-size-lDevice;
+}
+/* ----------- Medium Devices: Portrait and Landscape -----------*/
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+      font-size: @base-font-size-mDevice;
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+}
+/* ----------- Small Devices: Portrait and Landscape -----------*/
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 768px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+      font-size: @base-font-size-sDevice;
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 768px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 768px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
+}
+
+/// End of Media Queries
