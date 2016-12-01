@@ -42,7 +42,7 @@ namespace DesiredCssSelector
 
         private void button1_Click(object sender, EventArgs e)
         {
-            System.IO.File.WriteAllText("C:\\Program Files\\Code_Learn\\baseTemplate\\Finaltemplate.css", String.Empty);
+            System.IO.File.WriteAllText("C:\\Program Files\\Code_Learn\\baseTemplate\\css\\Finaltemplate.css", String.Empty);
             processFormRequest pfr = new processFormRequest();
             maincssContent = pfr.addBaseCss() + System.Environment.NewLine + System.Environment.NewLine + System.Environment.NewLine; // Adding Base CSS 
             if (desiredElements.Count!=0)
@@ -50,15 +50,24 @@ namespace DesiredCssSelector
                 for (int i = 0; i < desiredElements.Count; i++)
                 {
                     maincssContent = maincssContent + pfr.fetchElementContent(desiredElements.ElementAt(i), ref desiredElements) + System.Environment.NewLine + System.Environment.NewLine + System.Environment.NewLine; // Adding css of the desired element
-                    System.IO.File.WriteAllText("C:\\Program Files\\Code_Learn\\baseTemplate\\Finaltemplate.css", maincssContent);
+                    System.IO.File.WriteAllText("C:\\Program Files\\Code_Learn\\baseTemplate\\css\\Finaltemplate.css", maincssContent);
                 }
                 desiredElements.Clear();
             }
             else
             {
-                System.IO.File.WriteAllText("C:\\Program Files\\Code_Learn\\baseTemplate\\Finaltemplate.css", maincssContent); // when nothing is selected and only base css is needed to be loaded 
+                System.IO.File.WriteAllText("C:\\Program Files\\Code_Learn\\baseTemplate\\css\\Finaltemplate.css", maincssContent); // when nothing is selected and only base css is needed to be loaded 
             }
             desiredElements.Clear();
+            ClearAllCheckbox();
+        }
+
+        public void ClearAllCheckbox()
+        {
+            System.Threading.Thread.Sleep(300);
+            checkBox1.Checked = false;
+            checkBox2.Checked = false;
+            checkBox3.Checked = false;
         }
     }
 
@@ -69,16 +78,13 @@ namespace DesiredCssSelector
             string basecss="";
             try
             {
-                using (StreamReader sr = new StreamReader("C:\\Program Files\\Code_Learn\\baseTemplate\\base.css"))
+                using (StreamReader sr = new StreamReader("C:\\Program Files\\Code_Learn\\baseTemplate\\css\\base.css"))
                 {
                     basecss= sr.ReadToEnd();
                 }
             }
             catch (Exception e)
             {
-
-                // Let the user know what went wrong.
-                Console.WriteLine("The file could not be read:");
                 Console.WriteLine(e.Message);
             }
             return basecss;
@@ -88,7 +94,7 @@ namespace DesiredCssSelector
             string elementContent = "";
             try
             {
-                using (StreamReader sr  = new StreamReader("C:\\Program Files\\Code_Learn\\baseTemplate\\template.css"))
+                using (StreamReader sr  = new StreamReader("C:\\Program Files\\Code_Learn\\baseTemplate\\css\\template.css"))
                 {
                     string line;
                     while ((line = sr.ReadLine().TrimEnd('\r', '\n',' ')) != null)
@@ -117,9 +123,6 @@ namespace DesiredCssSelector
             }
             catch (Exception e)
             {
-
-                // Let the user know what went wrong.
-                Console.WriteLine("The file could not be read:");
                 Console.WriteLine(e.Message);
             }
             return elementContent;
