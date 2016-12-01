@@ -1,0 +1,9 @@
+C:\Program Files\Code_Learn\baseTemplate\DesiredCssSelector\DesiredCssSelector\bin\Release\DesiredCssSelector.exe.config
+C:\Program Files\Code_Learn\baseTemplate\DesiredCssSelector\DesiredCssSelector\bin\Release\DesiredCssSelector.exe
+C:\Program Files\Code_Learn\baseTemplate\DesiredCssSelector\DesiredCssSelector\bin\Release\DesiredCssSelector.pdb
+C:\Program Files\Code_Learn\baseTemplate\DesiredCssSelector\DesiredCssSelector\obj\Release\DesiredCssSelector.csprojResolveAssemblyReference.cache
+C:\Program Files\Code_Learn\baseTemplate\DesiredCssSelector\DesiredCssSelector\obj\Release\DesiredCssSelector.Form1.resources
+C:\Program Files\Code_Learn\baseTemplate\DesiredCssSelector\DesiredCssSelector\obj\Release\DesiredCssSelector.Properties.Resources.resources
+C:\Program Files\Code_Learn\baseTemplate\DesiredCssSelector\DesiredCssSelector\obj\Release\DesiredCssSelector.csproj.GenerateResource.Cache
+C:\Program Files\Code_Learn\baseTemplate\DesiredCssSelector\DesiredCssSelector\obj\Release\DesiredCssSelector.exe
+C:\Program Files\Code_Learn\baseTemplate\DesiredCssSelector\DesiredCssSelector\obj\Release\DesiredCssSelector.pdb
